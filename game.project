@@ -2,6 +2,9 @@
 title = extension-social-auth
 version = 0.1.0
 
+[library]
+include_dirs = assets socialauth extension-social-auth
+
 [bootstrap]
 main_collection = /main/main.collectionc
 
