@@ -1,0 +1,20 @@
+[project]
+title = extension-social-auth
+version = 0.1.0
+
+[bootstrap]
+main_collection = /main/main.collectionc
+
+[input]
+game_binding = /input/game.input_bindingc
+
+[display]
+width = 640
+height = 1136
+high_dpi = 1
+
+[osx]
+app_icon = 
+
+[windows]
+app_icon = 

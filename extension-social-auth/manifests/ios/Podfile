@@ -1,0 +1,5 @@
+platform :ios, '15.0'
+
+pod 'FirebaseCore', '11.4.0'
+pod 'FirebaseAuth', '11.4.0'
+pod 'PromisesObjC', :modular_headers => true

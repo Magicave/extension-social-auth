@@ -1,0 +1,96 @@
+- name: firebaseauth
+  type: table
+  desc: Firebase Auth native bridge. Android uses a Play Games server auth code to sign in to Firebase. iOS can fetch a Game Center verification payload for Firebase REST exchange.
+  members:
+
+  - name: configure
+    type: function
+    desc: Configure the native Firebase SDK.
+    parameters:
+    - name: config
+      type: table
+      desc: Configuration table with app_id, api_key, and project_id.
+    returns:
+    - name: success
+      type: boolean
+      desc: true if native configuration succeeded.
+
+  - name: sign_in_play_games
+    type: function
+    desc: Sign in to Firebase using a Google Play Games server auth code.
+    parameters:
+    - name: server_auth_code
+      type: string
+      desc: Play Games server auth code.
+    - name: callback
+      type: function
+      desc: Callback receiving the sign-in result.
+      parameters:
+      - name: self
+        type: object
+        desc: The current object.
+      - name: result
+        type: table
+        desc: Result table on success, or nil on failure.
+      - name: error
+        type: table
+        desc: Error table on failure, or nil on success.
+
+  - name: sign_in_game_center
+    type: function
+    desc: Request a Game Center verification payload on iOS for Firebase REST exchange.
+    parameters:
+    - name: callback
+      type: function
+      desc: Callback receiving the Game Center credential result.
+      parameters:
+      - name: self
+        type: object
+        desc: The current object.
+      - name: result
+        type: table
+        desc: Result table on success, or nil on failure.
+      - name: error
+        type: table
+        desc: Error table on failure, or nil on success.
+
+  - name: refresh_id_token
+    type: function
+    desc: Refresh the current Firebase user ID token.
+    parameters:
+    - name: force_refresh
+      type: boolean
+      desc: Force the Firebase SDK to refresh the token.
+    - name: callback
+      type: function
+      desc: Callback receiving the refresh result.
+      parameters:
+      - name: self
+        type: object
+        desc: The current object.
+      - name: result
+        type: table
+        desc: Result table on success, or nil on failure.
+      - name: error
+        type: table
+        desc: Error table on failure, or nil on success.
+
+  - name: sign_out
+    type: function
+    desc: Sign out the current native Firebase Auth session.
+
+  - name: get_debug_state
+    type: function
+    desc: Get native Firebase Auth debug state.
+    returns:
+    - name: state
+      type: table
+      desc: Debug state table.
+
+  - name: is_supported
+    type: function
+    desc: Check whether the native Firebase Auth bridge is supported on this platform.
+    returns:
+    - name: supported
+      type: boolean
+      desc: true on supported native platforms.

@@ -1,0 +1,24 @@
+local async_dispatch = require("socialauth.async_dispatch")
+local firebase_auth_native = require("assets.scripts.firebase_auth_native")
+
+local function dump_debug_state()
+	local state = firebase_auth_native.get_debug_state ~= nil and firebase_auth_native.get_debug_state() or nil
+	if state == nil then
+		print("extension-social-auth sample: no debug state")
+		return
+	end
+
+	for k, v in pairs(state) do
+		print("firebase_auth_native state", k, v)
+	end
+end
+
+function init(self)
+	dump_debug_state()
+end
+
+function update(self, dt)
+	if async_dispatch.has_pending() == true then
+		async_dispatch.drain()
+	end
+end

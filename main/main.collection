@@ -1,0 +1,14 @@
+name: "main"
+embedded_instances {
+  id: "main"
+  data: "components {\n"
+  "  id: \"script\"\n"
+  "  component: \"/main/main.script\"\n"
+  "}\n"
+  ""
+  position {
+    x: 320.0
+    y: 568.0
+  }
+}
+scale_along_z: 0

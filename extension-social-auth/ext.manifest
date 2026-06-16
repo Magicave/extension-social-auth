@@ -1,0 +1,18 @@
+name: FirebaseAuthExt
+
+platforms:
+    arm64-android:
+        context:
+            flags: []
+
+    armv7-android:
+        context:
+            flags: []
+
+    arm64-ios:
+        context:
+            frameworks: ['Foundation', 'GameKit', 'UIKit', 'Security']
+
+    x86_64-ios:
+        context:
+            frameworks: ['Foundation', 'GameKit', 'UIKit', 'Security']

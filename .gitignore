@@ -1,0 +1,7 @@
+/build/
+/.internal/
+/dist/
+/tmp/
+/logs/
+/.DS_Store
+Thumbs.db
