@@ -1,5 +1,5 @@
 local async_dispatch = require("socialauth.async_dispatch")
-local firebase_auth_native = require("assets.scripts.firebase_auth_native")
+local firebase_auth_native = require("socialauth.firebase_auth_native")
 
 local function dump_debug_state()
 	local state = firebase_auth_native.get_debug_state ~= nil and firebase_auth_native.get_debug_state() or nil
